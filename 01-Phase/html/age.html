@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Age Calculator</title>
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    input,
+    button {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h2>Age Calculator</h2>
+
+      <!-- Input for Date of Birth -->
+      <label for="dob">Enter Date of Birth:</label>
+      <input
+        type="date"
+        id="dob"
+      />
+
+      <!-- Calculate Age Button -->
+      <button onclick="calculateAge()">Calculate Age</button>
+
+      <!-- Display Results -->
+      <p id="age-result"></p>
+      <p id="days-result"></p>
+
+      <hr />
+
+      <h2>Add Days to Date</h2>
+      <label for="numDays">Enter Number of Days:</label>
+      <input
+        type="number"
+        id="numDays"
+      />
+
+      <button onclick="addDaysToDate()">Add Days</button>
+
+      <p id="new-date-result"></p>
+    </div>
+
+    <script>
+      // Function to Calculate Age
+      function calculateAge() {
+        let dobInput = document.getElementById("dob").value;
+        if (!dobInput) {
+          alert("Please enter your date of birth!");
+          return;
+        }
+
+        let dob = new Date(dobInput);
+        let today = new Date();
+
+        // Calculate Age in Years, Months, and Days
+        let years = today.getFullYear() - dob.getFullYear();
+        let months = today.getMonth() - dob.getMonth();
+        let days = today.getDate() - dob.getDate();
+
+        // Adjust if negative days or months
+        if (days < 0) {
+          months--;
+          days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+        }
+
+        if (months < 0) {
+          years--;
+          months += 12;
+        }
+
+        document.getElementById(
+          "age-result"
+        ).innerText = `Age: ${years} years, ${months} months, ${days} days`;
+
+        // Calculate Age in Days
+        let ageInDays = Math.floor((today - dob) / (1000 * 60 * 60 * 24));
+        document.getElementById(
+          "days-result"
+        ).innerText = `Age in Days: ${ageInDays} days`;
+      }
+
+      // Function to Add Days to the Current Date
+      function addDaysToDate() {
+        let numDays = document.getElementById("numDays").value;
+        if (!numDays || numDays <= 0) {
+          alert("Please enter a valid number of days!");
+          return;
+        }
+
+        let today = new Date();
+        today.setDate(today.getDate() + parseInt(numDays));
+
+        let newDate = today.toISOString().split("T")[0]; // Format to YYYY-MM-DD
+        document.getElementById(
+          "new-date-result"
+        ).innerText = `New Date: ${newDate}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      .website {
+        border: 2px solid;
+        display: grid;
+        grid-template-areas:
+          "h h h"
+          "c c a"
+          "c c a"
+          "f f f";
+      }
+      .header {
+        grid-area: h;
+      }
+      .content {
+        grid-area: c;
+      }
+      .ads {
+        grid-area: a;
+      }
+      .footer {
+        grid-area: f;
+      }
+      .item {
+        border: 1px dashed black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="website">
+      <div class="header item">header</div>
+      <div class="content item">content</div>
+      <div class="ads item">ads</div>
+      <div class="footer item">footer</div>
+    </div>
+  </body>
+</html>
+
+<!-- 
+    Units
+    Types:
+    Absolute : In it's own
+    Examples : pixel
+    Relative : In reference to something, considering something as base value
+    Examples :
+    percentage(%)
+    em : inherit of the parent (usually used for font size)
+    1em is 1(times)parent
+    2em is 2(times)parent
+    rem : same as em but parent here is root element (every element looks at rem). html is the root
+    vh (viewport height) : relative to the size of available view port
+    vw (viewport width) : relative to the size of available view port
+ -->

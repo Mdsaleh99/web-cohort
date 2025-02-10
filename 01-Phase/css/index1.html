@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Website</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        /* border-box is apne me rhene ka, bahar mat failo
+          content-box is padding, border, margin will spill out
+          by default content-box is what html gives */
+      }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #1f2937;
+        padding: 20px 25px;
+        color: #ffffff;
+      }
+
+      nav div ul {
+        display: flex;
+        gap: 20px;
+        list-style-type: none;
+        cursor: pointer;
+      }
+      nav div button {
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+
+      nav div button:hover {
+        background-color: #eff352;
+      }
+      .hero{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #1f2937;
+        color: #ffffff;
+        padding: 40px 80px;
+      }
+      .hero div {
+        width: 50%;
+      }
+      .hero div h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .hero div p {
+        font-size: 1.2rem;
+        color: rgb(220, 211, 211);
+        margin-bottom: 1rem;
+      }
+      .hero div button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .hero div img {
+        width: 100%;
+        box-shadow: 0 0 20px white;
+        border-radius: 20px;
+        object-fit: cover;
+      }
+      .hero div img:hover{
+        transform: rotate(-10deg);
+        transition: all 0.5s ease-in-out;
+      }
+      .logo-text{
+        text-align: center;
+        margin: 40px 0;
+        font-size: 42px;
+      }
+      .logo{
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 10%;
+        align-items: center;
+        border: 2px solid #1f2937;
+        padding: 40px 80px;
+      }
+      .logo div img {
+        width: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .three-card{
+        display: flex;
+        margin: 20px 10%;
+        justify-content: space-evenly;
+        border: 2px solid black;
+        padding: 40px 80px;
+        box-shadow: 0 0 10px black;
+      }
+      
+      .card{
+        border: 2px solid black;
+        width: 20%;
+        border-radius: 10px;
+        text-align: center;
+        padding: 15px;
+        box-shadow: 0 0 10px black;
+      }
+      .card img {
+        object-fit: cover;
+        width: 180px;
+        border-radius: 10px;
+      }
+      h3{
+        margin: 10px 0;
+      }
+      /* media query */
+      @media screen and (max-width: 976px){ /* max-width: 976px ye sirf 976px tak hi work karega uske uppar nhi  */
+        .three-card{
+          flex-direction: column;
+          justify-content: center;
+        }
+        .three-card div{
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <p>My Logo</p>
+      </div>
+      <div>
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div>
+        <button>Sign up</button>
+        <button>Log out</button>
+      </div>
+    </nav>
+    <section class="hero">
+      <div>
+        <h1>Hero Title</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro rem,
+          recusandae eveniet odit eaque omnis magni, voluptatum dolores
+          cupiditate id ex fugit autem aut repellendus quasi officia soluta?
+          Animi, non?
+        </p>
+        <button>Sign up</button>
+      </div>
+      <div>
+        <img
+          src="../table-challenge/pricing-table-2/assets/chaicodelogo.png"
+          alt="image"
+        />
+      </div>
+    </section>
+
+    <h2 class="logo-text">Our Client</h2>
+    
+    <section class="logo">
+      <div>
+        <img src="https://images.pexels.com/photos/1069798/pexels-photo-1069798.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+      </div>
+      <div>
+        <img src="https://images.pexels.com/photos/1069798/pexels-photo-1069798.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+      </div>
+      <div>
+        <img src="https://images.pexels.com/photos/1069798/pexels-photo-1069798.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+      </div>
+      <div>
+        <img src="https://images.pexels.com/photos/1069798/pexels-photo-1069798.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+      </div>
+      <div>
+        <img src="https://images.pexels.com/photos/1069798/pexels-photo-1069798.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+      </div>
+    </section>
+
+    <section class="three-card">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/1069798/pexels-photo-1069798.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+        <h3>Card Title</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, nihil. Ipsam dolor veritatis architecto soluta saepe, est iure eos repellendus!</p>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/1069798/pexels-photo-1069798.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+        <h3>Card Title</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, nihil. Ipsam dolor veritatis architecto soluta saepe, est iure eos repellendus!</p>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/1069798/pexels-photo-1069798.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+        <h3>Card Title</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, nihil. Ipsam dolor veritatis architecto soluta saepe, est iure eos repellendus!</p>
+      </div>
+    </section>
+
+  </body>
+</html>

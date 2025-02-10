@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Simple Calculator</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+  </head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .calculator {
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    #display {
+      width: 100%;
+      height: 50px;
+      font-size: 1.5em;
+      text-align: right;
+      margin-bottom: 10px;
+      padding: 5px;
+      border: none;
+      background: #f7f7f7;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      width: 60px;
+      height: 60px;
+      font-size: 1.2em;
+      border: none;
+      cursor: pointer;
+      background: #e0e0e0;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #d0d0d0;
+    }
+
+    button:active {
+      background: #c0c0c0;
+    }
+  </style>
+  <body>
+    <div class="calculator">
+      <input
+        type="text"
+        id="display"
+        readonly
+      />
+      <div class="buttons">
+        <button onclick="clearDisplay()">C</button>
+        <!-- <button onclick="backspace()">←</button> -->
+        <!-- <button onclick="appendValue('%')">%</button> -->
+        <button onclick="appendValue('/')">÷</button>
+
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button onclick="appendValue('*')">×</button>
+
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button onclick="appendValue('-')">−</button>
+
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button onclick="appendValue('+')">+</button>
+
+        <button onclick="appendValue('0')">0</button>
+        <button onclick="appendValue('.')">.</button>
+        <button onclick="calculateResult()">=</button>
+        <!-- <button onclick="squareRoot()">√</button> -->
+
+        <button onclick="appendValue('**')">POW</button>
+        <button onclick="memoryClear()">MC</button>
+        <button onclick="memoryRecall()">MR</button>
+        <button onclick="memoryAdd()">M+</button>
+      </div>
+    </div>
+
+    <script>
+      let memory = 0;
+
+      function appendValue(value) {
+        document.getElementById("display").value += value;
+      }
+
+      function clearDisplay() {
+        document.getElementById("display").value = "";
+      }
+
+      function backspace() {
+        let display = document.getElementById("display");
+        display.value = display.value.slice(0, -1);
+      }
+
+      function calculateResult() {
+        try {
+          document.getElementById("display").value = eval(
+            document.getElementById("display").value
+          );
+        } catch {
+          document.getElementById("display").value = "Error";
+        }
+      }
+
+      function squareRoot() {
+        let value = document.getElementById("display").value;
+        if (value) {
+          document.getElementById("display").value = Math.sqrt(
+            parseFloat(value)
+          );
+        }
+      }
+
+      function memoryClear() {
+        memory = 0;
+      }
+
+      function memoryRecall() {
+        document.getElementById("display").value = memory;
+      }
+
+      function memoryAdd() {
+        let value = parseFloat(document.getElementById("display").value);
+        if (!isNaN(value)) {
+          memory += value;
+        }
+      }
+    </script>
+  </body>
+</html>

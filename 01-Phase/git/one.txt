@@ -1,0 +1,138 @@
+To enable showing the hidden ".git" folder in Visual Studio Code, go to File > Preferences > Settings, search for "exclude" in the search bar, and then remove any patterns that might be hiding the ".git" folder from the "Files: Exclude" setting; 
+
+
+ls -la  => This command for to know hidden file also
+
+use "git rm --cached <file>..." to unstage => This is for unstage
+
+git log => It logs the commit details and we can use "--oneline" flag it shows the short messages of log
+
+https://docs.chaicode.com/terminology/
+
+
+change default code editor
+You can change the default code editor in your system to vscode. To do this, you can use the following command:
+git config --global core.editor "code --wait"
+
+
+A .gitkeep file is typically used to include otherwise empty directories in a Git repository. Git does not track empty directories by default, so adding a .gitkeep file allows you to commit the empty directory to your repository.
+
+Purpose of .gitkeep:
+Track Empty Directories: Git will only track files, not directories. If you need to include a directory that is currently empty, you can place a .gitkeep file in it. This makes Git treat the directory as non-empty, allowing you to commit it.
+
+
+
+important topics
+https://docs.chaicode.com/git-behind-the-scenes/
+https://docs.chaicode.com/diff-stash-and-tags/
+https://docs.chaicode.com/branches-in-git/
+
+HEAD in git
+The HEAD is a pointer to the current branch that you are working on. It points to the latest commit in the current branch. When you create a new branch, it is automatically set as the HEAD of that branch.
+
+
+
+Creating a new branch
+To create a new branch, you can use the following command:
+
+git branch
+git branch bug-fix
+git switch bug-fix
+git log
+git switch master
+git switch -c dark-mode
+git checkout orange-mode
+
+Some points to note:
+
+git branch - This command lists all the branches in the current repository.
+git branch bug-fix - This command creates a new branch called bug-fix.
+git switch bug-fix - This command switches to the bug-fix branch.
+git log - This command shows the commit history for the current branch.
+git switch master - This command switches to the master branch.
+git switch -c dark-mode - This command creates a new branch called dark-mode. the -c flag is used to create a new branch.
+git checkout orange-mode - This command switches to the orange-mode branch.
+Commit before switching to a branch
+Go to .git folder and checkout to the HEAD file
+
+
+another section is adding
+
+git merge main se hi dusari branch ko merge karna hai
+
+important topic
+https://docs.chaicode.com/diff-stash-and-tags/
+Git diff
+The git diff is an informative command that shows the differences between two commits. It is used to compare the changes made in one commit with the changes made in another commit. Git consider the changed versions of same file as two different files. Then it gives names to these two files and shows the differences between them.
+
+How to read the diff
+a -> file A and b -> file B
+---- indicates the file A
++++ indicates the file B
+@@ indicates the line number
+Here the file A and file B are the same file but different versions.
+
+Git will show you the changes made in the file A and file B. It will also show you the line number where the change occurred along with little preview of the change.
+
+Another way to compare the difference between two branches is to use the following command:
+
+git diff branch-name-one..branch-name-two
+
+
+
+Git Stash
+Stash is a way to save your changes in a temporary location. It is useful when you want to make changes to a file but don’t want to commit them yet. You can then come back to the file later and apply the changes.
+
+Conflicting changes will not allow you to switch branches without committing the changes. Another alternative is to use the git stash command to save your changes in a temporary location.
+
+git stash
+
+
+
+
+
+Git Tags -> this is not use more
+Tags are a way to mark a specific point in your repository. They are useful when you want to remember a specific version of your code or when you want to refer to a specific commit. Tags are like sticky notes that you can attach to your commits.
+
+Creating a tag
+You can create a tag using the following command:
+
+git tag <tag-name>
+
+
+
+
+
+https://docs.chaicode.com/rebase-and-reflog/
+Rebase in git
+Git rebase is a powerful Git feature used to change the base of a branch. It effectively allows you to move a branch to a new starting point, usually a different commit, by “replaying” the commits from the original base onto the new base. This can be useful for keeping a cleaner, linear project history.
+
+Some people like to use rebase over the merge command because it allows you to keep the commit history cleaner and easier to understand. It also allows you to make changes to the code without affecting the original branch.
+
+
+
+
+
+
+
+
+
+Setup ssh key and add to github
+If you haven’t done it already, you need to setup ssh key and add it to your github account. You can do this by following the instructions on the Github website.
+
+You can find the exact steps on the website for both Windows and MacOS. The steps are same for both, only apple users need to add the ssh key to their keychain.
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?tool=webui
+
+
+
+
+In Git, origin is the default name given to the remote repository when you clone a repository or add a remote for the first time. It essentially serves as an alias for the URL of the remote repository, making it easier to reference the repository in commands without having to use the full URL each time.
+
+Why Use origin?
+Convenience: Instead of typing the full URL of the remote repository, you just use origin as a shorthand. For example:
+Full URL: https://github.com/username/repository.git
+Shorthand: origin
+Default Naming: When you clone a repository, Git automatically names the remote as origin. This is a convention, so you don't have to manually specify the name every time unless you want to use a different name.
+Example of Common Git Commands Using origin:
+git pull origin main: Fetches and merges changes from the main branch of the remote repository named origin.
+git push origin feature-branch: Pushes your local feature-branch to the remote repository named origin.

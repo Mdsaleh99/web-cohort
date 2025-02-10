@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Armstrong Number Checker</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    input {
+      padding: 8px;
+      margin: 10px 0;
+      width: 200px;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    p {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h2>Armstrong Number Checker</h2>
+      <input
+        type="number"
+        id="numberInput"
+        placeholder="Enter a number"
+      />
+      <button onclick="checkArmstrong()">Check</button>
+      <button onclick="checkPalindrome()">Palin</button>
+      <p id="result"></p>
+    </div>
+    <script>
+      function checkArmstrong() {
+        let num = document.getElementById("numberInput").value;
+        let sum = 0;
+        let temp = num;
+        let digits = num.length;
+
+        while (temp > 0) {
+          let digit = temp % 10;
+          sum += Math.pow(digit, digits);
+          temp = Math.floor(temp / 10);
+        }
+
+        if (sum == num) {
+          document.getElementById(
+            "result"
+          ).innerHTML = `${num} is an Armstrong Number! ✅`;
+          document.getElementById("result").style.color = "green";
+        } else {
+          document.getElementById(
+            "result"
+          ).innerHTML = `${num} is NOT an Armstrong Number! ❌`;
+          document.getElementById("result").style.color = "red";
+        }
+      }
+
+      function checkPalindrome(){
+        let value = document.getElementById("numberInput").value
+        let rev = value.split("").reverse().join("")
+        if(value == rev){
+            document.getElementById("result").innerHTML = "Plindrome"
+        } else {
+            document.getElementById("result").innerHTML = "Not Palindrome"
+        }
+      }
+    </script>
+  </body>
+</html>
