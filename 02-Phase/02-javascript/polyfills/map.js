@@ -1,3 +1,5 @@
+// Machine Coding
+
 // .map
 // signature of map => return new array, iterate over each element in given array, userFn, does not modify original array
 if (!Array.prototype.myMap) {

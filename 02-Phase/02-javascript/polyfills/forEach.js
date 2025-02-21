@@ -1,3 +1,5 @@
+// Machine Coding
+
 const arr = [1, 2, 3, 4, 5, 6];
 // 1) forEach
 // when we have to write polyfill for any function first we have to understand the function how  it works
