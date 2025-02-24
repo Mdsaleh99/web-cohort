@@ -1,0 +1,39 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* Dark mode background */
+body {
+  background-color: #0d1117;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Clock container styling */
+.clock-container {
+  text-align: center;
+  background-color: #161b22;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Time styling */
+#time {
+  font-size: 5rem;
+  color: #39ff14; /* Neon green for contrast */
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+}
+
+/* Date styling */
+#date {
+  font-size: 1.6rem;
+  color: #8b949e; /* Muted gray for date text */
+}
