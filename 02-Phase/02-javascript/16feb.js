@@ -58,7 +58,7 @@ function onef(){
 console.log(myName);
 
 
-// IFFE
+// IIFE
 (function(){
     console.log("hitesh");
     
