@@ -3,10 +3,17 @@ const arr = [1, 2, 3];
 const str = "name";
 console.log(str.prototype);
 
+// Read this article ==> https://mdsaleh.hashnode.dev/javascript-prototypes-the-backbone-of-object-inheritance
+
 /**
- *Notes :
- * 1. .prototype detects the type and the puts all the related methods under a property called .prototype for any given variable
- * 2. Array contains prototype which contains all the properties and methods then in that case js will add __proto__ which will also have all the .prototype from base class
- * 3. Javascript checks for any property at root level, if not found at root then it checks recursively under .__proto__
- * 
+Notes :
+    prototype -> Class ke saath use karte hai
+    __proto__ -> Class ke instances (means object) ke saath use karte hai
+
+    Array class ka prototype access karna ho to
+    Array.prototype
+
+    const arr = new Array()
+    arr.__proto__
+
  */

@@ -7,6 +7,10 @@ const arr = [1, 2, 3, 4, 5, 6];
 
 // ********* forEach signature => no return, function input as parameters, 1st parameter value, 2nd parameter index, and function kaam karta hai-calls my function for every value *********
 
+// A polyfill is a piece of JavaScript code that provides modern functionality on older browsers that do not natively support it. It "fills in the gap" by implementing missing features manually.
+
+// Read this article ==> https://mdsaleh.hashnode.dev/polyfills-in-javascript-bridging-the-gap-for-cross-browser-compatibility
+
 // const ret = arr.forEach(function (value, index) {
 //     console.log(value, index);
 // })

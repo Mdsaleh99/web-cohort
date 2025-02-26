@@ -26,6 +26,8 @@ obj3.__proto__ = obj2
 // obj3 k pass getFullName function nahi hai so ye obj3 k __proto__ me check karega ki getFullName function agar hai to ye run hoga. __proto__ default is object class
 // __proto__ jab tak null nahi hota tab tak ye check karega ki oh function hai ya nahi prototype me. these all known as Prototype inheritence
 
+// Read this article ==> https://mdsaleh.hashnode.dev/javascript-prototypes-the-backbone-of-object-inheritance
+
 console.log(obj1);
 console.log(obj2.getFullName());
 console.log(obj3.getFullName());
