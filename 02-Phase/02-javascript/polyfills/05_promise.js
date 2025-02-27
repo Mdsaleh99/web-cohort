@@ -1,8 +1,6 @@
-// creating MyPromise class
 /*
 Promise
-• Jaise hi promise ka obj banate ho
-ek executor function do.
+• Jaise hi promise ka obj banate ho ek executor (callback) function do.
 • executor function ke paas resolve and ek reject
 • resolve ko call karne pr:
     • promise fullfill and
@@ -10,17 +8,18 @@ ek executor function do.
 • reject ko call karne pr:
     • promise reject ho jata h and
     • sabhi catch functions call
-• finally ko har baar run hona hi hai
+• finally toh har bar karna hi hai
 */
 
+// creating MyPromise class
 class MyPromise {
   constructor(executorFn) {
     this._state = "pending";
-    this._successCallBacks = [];
+    this._successCallBacks = []; // jitne bhi then() function user dega chains me toh o iss me push honge aur iske upper loop karke execute karenge baad me resloveFunction k ander
     this._errorCallBacks = [];
     this._finallyCallBacks = [];
-    this.value = undefined;
-    executorFn(
+    this.value = undefined; // this written because when promise instantly resolving the value is undefined so we passing this.value in cb() and user given value sets in the resolverFunction()
+    executorFn( // we doing bind because we calling function from outside and we loosing context. when we do resolve() that is run from outside it does'nt know the context
       this.resolverFunction.bind(this),
       this.rejectorFunction.bind(this)
     );
@@ -29,12 +28,12 @@ class MyPromise {
   then(cb) {
     if (this._state == "fulfilled") {
       console.log(`Apka promise toh pehle hi pura hogya, Run hi kar deta hu`);
-      cb(this.value);
+      cb(this.value); 
       return this;
     }
 
     this._successCallBacks.push(cb);
-    return this; // we returning because we have to do chanining
+    return this; // khud k hi instance return kardo. we returning because we have to do chanining
   }
 
   catch(cb) {
@@ -45,7 +44,7 @@ class MyPromise {
     }
 
     this._errorCallBacks.push(cb);
-    return this; // we returning because we have to do chanining
+    return this; // khud k hi instance return kardo. we returning because we have to do chanining
   }
 
   finally(cb) {
@@ -55,15 +54,15 @@ class MyPromise {
     }
 
     this._finallyCallBacks.push(cb);
-    return this; // we returning because we have to do chanining
+    return this; // khud k hi instance return kardo. we returning because we have to do chanining
   }
 
   resolverFunction(value) {
     console.log(
       `Fullfilling Promise, Running ${this._successCallBacks.length} callbacks`
     );
+    this._state = "fulfilled";
     this.value = value;
-    this._state = "fullfilled";
     this._successCallBacks.forEach((cb) => cb(value));
     this._finallyCallBacks.forEach((cb) => cb());
   }
@@ -98,12 +97,13 @@ class MyPromise {
 
 function wait(seconds) {
   const p = new MyPromise((resolve, reject) => {
-    resolve("Hahaha");
+    resolve("Hahaha"); 
   });
   return p;
 }
 
-const p = wait(5);
+const p = wait(5); // promise yahi pe hi resolve hogaya. promise register hone se pehle hi resolve hogaya means .then() ya catch() ya finally() run hone se pehle hi resolve hogaya toh yeh ek problem hai and we have to fix it. 
+// so to fix it we have to check condition in then(),catch(),finally() agar promise pehle se hi 'fulfilled' pada hai toh then() me, toh direct cb() ko run kardo and successCallBacks me push karne ki zarurat nhi hai aur return kardo 'this'. same for catch() but _state should 'rejected' and same for finally() but _state should not be 'pending'
 
 console.log("Registering Callbacks");
 

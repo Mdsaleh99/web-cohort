@@ -66,6 +66,8 @@ checktruthyValue("hitesh"); // Truthy
 checktruthyValue(""); // Falsy
 checktruthyValue([]); // Truthy
 checktruthyValue([1, 2, 3]); // Truthy
+checktruthyValue(undefined) // Falsy
+checktruthyValue(null) // Falsy
 
 function login(username, password) {
   if (username === "admin" && (password === "1234" || loginIp == "127")) {
