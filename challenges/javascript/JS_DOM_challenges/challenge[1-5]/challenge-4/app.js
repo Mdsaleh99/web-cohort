@@ -3,8 +3,15 @@ const addBtn = document.getElementById("addButton");
 const ul = document.getElementById("taskList");
 const totalTasks = document.getElementById("totalTasks");
 const completedTasks = document.getElementById("completedTasks");
+const liEmptyList = document.querySelector(".task-list .empty-list")
+const ulByClassName = document.getElementsByClassName("task-list");
+
 
 addBtn.addEventListener("click", () => {
+  if (liEmptyList && ul.children.length > 0) { 
+    liEmptyList.remove();
+  }
+  console.log(ul.children.length);
   const li = document.createElement("li");
   li.classList.add("task-item");
   const value = taskInput.value;
@@ -30,6 +37,19 @@ addBtn.addEventListener("click", () => {
   btn.classList.add("delete-button");
   btn.innerText = "Delete";
 
-    ul.appendChild(li);
-    taskInput.value = ""
+  ul.appendChild(li);
+  taskInput.value = "";
 });
+
+
+
+
+
+/*
+The 'children.length' property in JavaScript returns the number of child elements (not text nodes or comments) inside a parent element.
+Numbering Starts From:
+If there are no <li> elements, ul.children.length will be 0.
+If there is one <li> element, ul.children.length will be 1.
+It counts from 0 for an empty list and increases by 1 for each child element.
+
+*/
