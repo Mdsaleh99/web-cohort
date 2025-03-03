@@ -1,0 +1,11 @@
+We have to create these features
+
+Features
+• Edit Task
+• Delete Task
+• Dynamically add boards
+• Remove Board
+• Drag - Sorting
+• Tasks - Local Storage (Store)
+• Board Head shows count on number of tasks
+• Time on evey task

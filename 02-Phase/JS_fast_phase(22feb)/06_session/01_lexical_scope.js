@@ -9,6 +9,8 @@ How does lexical scope work?
 • Inner functions can use variables from the outer functions they're inside of
 */
 
+// https://app.eraser.io/workspace/Smjc59df1hVTTdSzNqZK
+
 // Global scope
 let globalVar = "I'm a global variable";
 

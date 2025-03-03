@@ -1,0 +1,4 @@
+create a project using lexical scope and closure concept
+the project based on creating dynamic buttons and add colors
+below link the project details is there
+    https://app.eraser.io/workspace/Smjc59df1hVTTdSzNqZK

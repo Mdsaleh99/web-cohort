@@ -1,0 +1,4 @@
+In this '02_optimised_kanban_project' we creating a kanban project with more features and enhanced version
+
+
+write a polyfill of bind, call and apply
