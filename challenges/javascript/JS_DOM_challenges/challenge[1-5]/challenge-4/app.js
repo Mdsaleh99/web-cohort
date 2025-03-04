@@ -63,8 +63,6 @@ addBtn.addEventListener("click", () => {
   btn.addEventListener("click", () => {
     li.remove()
   })
-  
-
 });
 
 /*
