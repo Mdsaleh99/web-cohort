@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // carouselCaptionById.innerText = images[currentIndex].caption;
   // const spanIndicator = document.querySelectorAll(".carousel-nav .carousel-indicator");
   // spanIndicator[currentIndex].classList.add("active")
-  
+
   chnageSlideAndCaption(); // instead of writing above 3 lines direct call this function to initalise caption and indicator when page is loaded. by writing above code we voilating the 'DRY' principle
 
   prevBtn.addEventListener("click", () => {
@@ -92,17 +92,31 @@ document.addEventListener("DOMContentLoaded", () => {
     chnageSlideAndCaption();
     // console.log(currentIndex);
   });
-  let seconds = 1;
+  let seconds = 5;
+  let intervalId = null; // Store the interval globally
   function updateTimer() {
-    timerDisplay.textContent = seconds
-    seconds++
+    timerDisplay.textContent = `Next slide in ${seconds}s`;
+    if (seconds === 0) {
+      seconds = 6
+      const totalSlides = images.length;
+      currentIndex = (currentIndex + 1) % totalSlides;
+      chnageSlideAndCaption();
+    }
+    seconds--;
   }
-  autoPlayBtn.addEventListener('click', function () {
-    setInterval(updateTimer, 1000)
-
-    // setTimeout(, 2000)
-  })
-
+  autoPlayBtn.addEventListener("click", function () {
+    if (intervalId) {
+      clearInterval(intervalId); // Stop autoplay if it's running
+      intervalId = null;
+      autoPlayBtn.textContent = "Start Auto Play"; // Update button text
+      timerDisplay.innerText = ""
+    } else {
+      seconds = 5; // Reset seconds when autoplay starts
+      timerDisplay.innerText = `Next slide in ${seconds}s`;
+      intervalId = setInterval(updateTimer, 1000); // Start the interval
+      autoPlayBtn.textContent = "Stop Auto Play"; // Update button text
+    }
+  });
 });
 
 // translateX() function allows you to re-position an element along the x-axis (horizontally).

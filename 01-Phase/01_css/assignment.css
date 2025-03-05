@@ -1,7 +1,10 @@
 * { 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
+/* 
+    https://www.w3schools.com/css/css_boxmodel.asp
+    https://flexboxfroggy.com/
+*/
 .container {
     height: 380px;
     width: 600px;

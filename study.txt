@@ -1,0 +1,15 @@
+https://en.wikipedia.org/wiki/Head-of-line_blocking
+https://github.com/rmarx/holblocking-blogpost
+https://en.wikipedia.org/wiki/HTTP_pipelining
+https://en.wikipedia.org/wiki/Transmission_Control_Protocol
+https://javascript.info/call-apply-decorators
+https://caniuse.com/
+
+https://rombo.co/
+https://www.freecodecamp.org/news/data-structures-in-javascript-with-examples/?s=08#heading-objects-hash-tables
+https://github.com/codecrafters-io/build-your-own-x?tab=readme-ov-file#build-your-own-database
+
+earser.io link
+https://app.eraser.io/workspace/C3QWGDrgG8MbSgAKzmac
+https://app.eraser.io/workspace/pjz1SKuhQJ43kxOr63Hr
+https://app.eraser.io/workspace/06oTmTiO17QjeuTDkp7O

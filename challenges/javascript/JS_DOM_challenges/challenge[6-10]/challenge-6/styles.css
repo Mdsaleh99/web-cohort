@@ -117,7 +117,7 @@ h2 {
 .date {
   font-size: 1.2rem;
   margin-top: 10px;
-  opacity: 0.8;
+  /* opacity: 0.8; */
 }
 
 @media (min-width: 768px) {
