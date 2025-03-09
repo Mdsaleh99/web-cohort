@@ -100,7 +100,7 @@ You can create a tag using the following command:
 git tag <tag-name>
 
 
-
+git rm -r --cached $(git ls-files | grep assets) study about this command
 
 
 https://docs.chaicode.com/rebase-and-reflog/

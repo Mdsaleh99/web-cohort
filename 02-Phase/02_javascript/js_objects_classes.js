@@ -22,7 +22,7 @@ const obj3 = {
   lname: "Mulla",
 };
 
-obj3.__proto__ = obj2
+obj3.__proto__ = obj2;
 // obj3 k pass getFullName function nahi hai so ye obj3 k __proto__ me check karega ki getFullName function agar hai to ye run hoga. __proto__ default is object class
 // __proto__ jab tak null nahi hota tab tak ye check karega ki oh function hai ya nahi prototype me. these all known as Prototype inheritence
 
@@ -50,3 +50,9 @@ const p2 = new Person("Abdulla", "Mulla");
 console.log(p1.getFullName());
 console.log(p2.getFullName());
 p1.fnamess;
+
+/*
+    A Higher-Order Function (HOF) is a function that accepts another function as an argument and/or returns a function.
+
+    That’s why map(), filter(), and reduce() are called higher-order functions.
+*/
