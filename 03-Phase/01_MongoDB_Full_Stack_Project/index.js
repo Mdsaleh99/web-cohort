@@ -45,3 +45,6 @@ app.use("/api/v1/users", userRoutes);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+// https://www.nodemailer.com/
+// https://mailtrap.io/
+// https://semver.org/

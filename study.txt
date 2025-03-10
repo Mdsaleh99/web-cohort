@@ -8,6 +8,11 @@ https://caniuse.com/
 https://rombo.co/
 https://www.freecodecamp.org/news/data-structures-in-javascript-with-examples/?s=08#heading-objects-hash-tables
 https://github.com/codecrafters-io/build-your-own-x?tab=readme-ov-file#build-your-own-database
+https://modelcontextprotocol.io/introduction
+https://github.com/the-ajay-panigrahi/chai-code-web-dev-cohort/tree/main/Week%2008/kanban-board-discord
+https://www.nodemailer.com/
+https://www.youtube.com/watch?v=yrTFOC3k54k&t=151s
+https://resend.com/blog/incident-report-for-february-21-2024
 
 earser.io link
 https://app.eraser.io/workspace/C3QWGDrgG8MbSgAKzmac
