@@ -20,8 +20,9 @@ function updateClock() {
     dateElement.textContent = now.toLocaleDateString(undefined, options);
 }
 /*
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString#parameters
 now.toLocaleDateString(undefined, options)
-In toLocaleDateString(), the first argument represents the locale (language and region format). When we pass undefined, it tells JavaScript to use the default locale of the user's browser or system.
+? In toLocaleDateString(), the first argument represents the locale (language and region format). When we pass undefined, it tells JavaScript to use the default locale of the user's browser or system.
 
 Why undefined?
 If you explicitly pass a locale (e.g., "en-US" or "fr-FR"), it forces a specific format.

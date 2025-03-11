@@ -49,7 +49,7 @@ person1.greet.call({ name: "Mukul" }); // Hello Mukul
 // here we can use bind() instead call() but using bind() it returns a new function.
 // call() function call directly
 
-person1.greet.bind(person2); // o/p => nothing will print we have to store this in variable after that we have to call
+person1.greet.bind(person2); // o/p => nothing will print we have to store this in variable because bind() retruns a function, after that we have to call
 const bindGreet = person1.greet.bind(person2);
 bindGreet(); // Hello abdulla
 console.log(bindGreet); // o/p => [Function: bound greet]

@@ -17,7 +17,7 @@ let expenseReport1 = expenses.reduce((report, expense) => {
   return report;
 }, {});
 
-console.log("Expense Report", expenseReport1); // o/p => Expense Report { Food: NaN, Utilities: NaN } here values are NaN because we did'nt intialise that property value we just initialised empty object e.g {Food: 0, Utilities: 0}
+console.log("Expense Report", expenseReport1); // o/p => Expense Report { Food: NaN, Utilities: NaN } here values are NaN because we did'nt intialise that property value we just initialised empty object e.g {}, so to solve this we have to initialise the values like Food: 0, Utilities: 0
 
 let expenseReport2 = expenses.reduce(
   (report, expense) => {
