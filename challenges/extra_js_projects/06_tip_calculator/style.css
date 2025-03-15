@@ -1,0 +1,72 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for the Calculator */
+.container {
+    background-color: #1e1e1e; /* Dark gray background */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+label {
+    display: block;
+    font-size: 14px;
+    text-align: left;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 95%;
+    padding: 10px;   
+    border: none;
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00ff00; /* Neon green button */
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #00cc00; /* Slightly darker green on hover */
+}
+
+/* Results */
+p {
+    font-size: 16px;
+    margin: 10px 0;
+}
