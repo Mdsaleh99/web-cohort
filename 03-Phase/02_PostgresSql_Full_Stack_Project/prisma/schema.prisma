@@ -16,6 +16,7 @@ datasource db {
 model User {
   id                  String   @id @default(cuid())
   name                String
+  phone               String  @unique
   email               String   @unique
   password            String
   role                String   @default("user")
@@ -26,4 +27,5 @@ model User {
   createdAt           DateTime @default(now())
   updatedAt           DateTime @default(now())
 }
+
 // npx prisma format

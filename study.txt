@@ -4,6 +4,7 @@ https://en.wikipedia.org/wiki/HTTP_pipelining
 https://en.wikipedia.org/wiki/Transmission_Control_Protocol
 https://javascript.info/call-apply-decorators
 https://caniuse.com/
+https://www.prisma.io/docs/getting-started/prisma-postgres/from-the-cli
 
 https://rombo.co/
 https://www.freecodecamp.org/news/data-structures-in-javascript-with-examples/?s=08#heading-objects-hash-tables
@@ -15,6 +16,15 @@ https://www.youtube.com/watch?v=yrTFOC3k54k&t=151s
 https://resend.com/blog/incident-report-for-february-21-2024
 https://scribbler.live/
 https://www.jsv9000.app/
+https://app.eraser.io/workspace/q60Plqc204XDNqi46BL7
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+
+
+https://auth0.com/docs/authenticate/protocols/openid-connect-protocol
+https://auth0.com/docs/get-started/applications/configure-applications-with-oidc-discovery
+https://auth0.com/docs/secure/tokens/json-web-tokens/json-web-key-sets
+https://auth0.com/docs/authenticate/protocols/openid-connect-protocol#what-is-openid-connect-oidc-
+https://www.geeksforgeeks.org/access-token-vs-refresh-token-a-breakdown/
 
 earser.io link
 https://app.eraser.io/workspace/C3QWGDrgG8MbSgAKzmac
