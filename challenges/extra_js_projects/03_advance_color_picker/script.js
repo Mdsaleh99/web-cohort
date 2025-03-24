@@ -68,6 +68,11 @@ function addFavouriteColor(color) {
     colorBox.title = color
     favoritesContainer.appendChild(colorBox);
 }
+console.log(this);
+console.log(globalThis);
+console.log(global);
+
+
 
 
 // textContent: Gets all text, including hidden ones (faster, ignores styles)
