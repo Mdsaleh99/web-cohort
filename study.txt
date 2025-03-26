@@ -26,6 +26,14 @@ https://auth0.com/docs/secure/tokens/json-web-tokens/json-web-key-sets
 https://auth0.com/docs/authenticate/protocols/openid-connect-protocol#what-is-openid-connect-oidc-
 https://www.geeksforgeeks.org/access-token-vs-refresh-token-a-breakdown/
 
+
+https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick
+https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick#close-callbacks ===> The order in which the timers ........... running on the machine).  yeh paragraph and example padna nhi bhulna
+https://nodejs.org/en/learn/asynchronous-work/understanding-processnexttick
+
+https://openid.net/developers/how-connect-works/
+
+
 earser.io link
 https://app.eraser.io/workspace/C3QWGDrgG8MbSgAKzmac
 https://app.eraser.io/workspace/pjz1SKuhQJ43kxOr63Hr

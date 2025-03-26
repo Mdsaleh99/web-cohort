@@ -196,13 +196,20 @@ const logoutUser = async (req, res) => {
       expires: new Date(0), // new Date(0) study about thi
     });
 
+    /*
+      What is new Date(0)?
+      new Date(0) creates a Date object representing January 1, 1970, 00:00:00 UTC (the Unix epoch time).
+
+      Why use new Date(0) in logout?
+      In a logout function, we use new Date(0) to immediately expire the cookie. Since the expiration date is set to the past, the browser removes the cookie.
+    */
     // return res.status(200).json({
     //   success: true,
     //   message: "User logged out successfully"
     // }); // response k time return likh ne ka koyi sense nhi hai
     res.status(200).json({
       success: true,
-      message: "User logged out successfully"
+      message: "User logged out successfully",
     });
   } catch (error) {
     
