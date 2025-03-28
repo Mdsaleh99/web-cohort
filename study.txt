@@ -10,13 +10,15 @@ https://rombo.co/
 https://www.freecodecamp.org/news/data-structures-in-javascript-with-examples/?s=08#heading-objects-hash-tables
 https://github.com/codecrafters-io/build-your-own-x?tab=readme-ov-file#build-your-own-database
 https://modelcontextprotocol.io/introduction
-https://github.com/the-ajay-panigrahi/chai-code-web-dev-cohort/tree/main/Week%2008/kanban-board-discord
 https://www.nodemailer.com/
 https://www.youtube.com/watch?v=yrTFOC3k54k&t=151s
 https://resend.com/blog/incident-report-for-february-21-2024
 https://scribbler.live/
 https://www.jsv9000.app/
 https://app.eraser.io/workspace/q60Plqc204XDNqi46BL7
+
+
+https://github.com/piyushgarg-dev/cohort-1.0-code-files/blob/main/promises/index.html
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
 
 
