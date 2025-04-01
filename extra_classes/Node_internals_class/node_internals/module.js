@@ -1,7 +1,7 @@
 // console.log("Start module")
-// // import test from "./module.greet.js";  // static import
+// import test from "./module.greet.js";  // static import
 // import("./module.greet.js").then((val)=>console.log(val.default)) // dynamic importing
-// // console.log(test);
+// console.log(test);
 
 // console.log("end module")
 
