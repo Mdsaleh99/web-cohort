@@ -42,3 +42,11 @@ https://app.eraser.io/workspace/pjz1SKuhQJ43kxOr63Hr
 https://app.eraser.io/workspace/06oTmTiO17QjeuTDkp7O
 
 https://app.eraser.io/workspace/LKDFcCD6ymPPy0jqZiRP
+https://dev.to/samrobbins85/making-an-npm-package-for-a-react-component-library-with-tailwind-css-a0h
+mdx file 
+https://mantine.dev/getting-started/
+https://coolify.io/docs/
+https://echarts.apache.org/handbook/en/get-started/
+https://github.com/hustcc/echarts-for-react
+https://drawsql.app/
+https://www.digitalocean.com/community/markdown
