@@ -1,5 +1,5 @@
 let x: number = 10;
-let user: string | null = "helj";
+let currentUser: string | null = "helj";
 let userObj: object = {};
 
 function add(x: number, y: number): number {
@@ -8,16 +8,16 @@ function add(x: number, y: number): number {
 let result: number = add(3, 4);
 let result2 = add(3, 4);
 
-function createUser(user: {
+function createUser(newUser: {
   firstName: string;
   lastName: string;
   email?: string;
 }) {
-  const trimedLastName = user.firstName.trim();
-  // const trimedEmail = user.email.trim() // 'user.email' is possibly 'undefined'.
-  const trimedEmail = user.email?.trim() // optional chaining
-  if(user.email){
-    user.email.trim()
+  const trimedLastName = newUser.firstName.trim();
+  // const trimedEmail = newUser.email.trim() // 'newUser.email' is possibly 'undefined'.
+  const trimedEmail = newUser.email?.trim() // optional chaining
+  if(newUser.email){
+    newUser.email.trim()
   }
 }
 
