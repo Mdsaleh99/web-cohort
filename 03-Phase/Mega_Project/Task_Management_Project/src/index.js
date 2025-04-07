@@ -17,3 +17,4 @@ connectDB()
         process.exit(1) 
     })
 
+// yah then() and catch() execute hi nhi hoga agr error aaye toh because connectedDB me hi hum kill karre hai execution ko
