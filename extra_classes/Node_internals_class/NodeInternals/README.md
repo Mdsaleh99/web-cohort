@@ -34,4 +34,6 @@ they will move to    Timer Queue -> I/O queue -> Check Queue -> Close Queue ->
 After execution of callbacks in micro queue -> Timer Queue
 After every callbacks execution in the Timer queue the event loop will check the micro queue and execute accordingly
 
-# 6. 
+## 🔗 Eraser Link
+
+[Node Internal Diagrams](https://app.eraser.io/workspace/LKDFcCD6ymPPy0jqZiRP)
