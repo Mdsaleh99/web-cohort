@@ -1,0 +1,1 @@
+*.pdf,[[:space:]]*.png,[[:space:]]*.jpg,[[:space:]]*jpeg filter=lfs diff=lfs merge=lfs -text

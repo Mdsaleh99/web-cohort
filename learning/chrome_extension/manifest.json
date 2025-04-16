@@ -1,0 +1,6 @@
+{
+  "manifest_version": 3,
+  "name": "Text Saver",
+  "version": "1.0",
+  "description": "Save selected text to a file."
+}
