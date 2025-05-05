@@ -96,6 +96,42 @@ userSchema.methods.generateRefreshToken = function () {
     );
 }
 
+userSchema.methods.generateEmailVerificationToken = function () {
+    // .methods are for document instances only
+    // in database we storing hashed token and for user we send unhashed token. when we want we compare both
+
+    const unHashedToken = crypto.randomBytes(20).toString("hex");
+
+    const hashedToken = crypto
+        .createHash("sha256")
+        .update(unHashedToken)
+        .digest("hex");
+
+    const tokenExpiry = Date.now() + 20 * 60 * 1000; // 20min
+    this.emailVerificationToken = hashedToken;
+    this.emailVerificationExpiry = tokenExpiry;
+
+    return unHashedToken;
+};
+
+
+userSchema.methods.generateForgotPasswordToken = function () {
+    // in database we storing hashed token and for user we send unhashed token. when we want we compare both
+
+    const unHashedToken = crypto.randomBytes(20).toString("hex")
+
+    const hashedToken = crypto.createHash("sha256").update(unHashedToken).digest("hex")
+
+    const tokenExpiry = Date.now() + (20 * 60 * 1000)  // 20min
+
+    this.forgotPasswordToken = hashedToken
+    this.forgotPasswordExpiry = tokenExpiry
+
+    return unHashedToken
+
+}
+
+
 userSchema.methods.generateTemporaryToken = function () {
     // in database we storing hashed token and for user we send unhashed token. when we want we compare both
 
@@ -110,3 +146,4 @@ userSchema.methods.generateTemporaryToken = function () {
 }
 
 export const User = mongoose.model('User', userSchema)
+export default User

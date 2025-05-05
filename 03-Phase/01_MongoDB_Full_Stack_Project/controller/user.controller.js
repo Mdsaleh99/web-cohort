@@ -109,6 +109,11 @@ const verifyUser = async (req, res) => {
   user.isVerified = true;
   user.verificationToken = undefined;
   await user.save();
+
+  return res.status(200).json({
+    message: "User verified successfully",
+    success: true,
+  });
 };
 
 const login = async (req, res) => {

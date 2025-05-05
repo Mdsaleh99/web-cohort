@@ -1,5 +1,5 @@
 import multer from "multer";
-
+import path from "path"
 // first file we store on our server after that we pass to 3rd party
 
 const storage = multer.diskStorage({
@@ -18,5 +18,19 @@ export const upload = multer({
     storage,
     limits: {
         fileSize: 1 * 1000 * 1000,
+    },
+    fileFilter: (req, file, cb) => {
+        const allowedExtensions = [".jpg", ".jpeg", ".png", ".svg"];
+        const ext = path.extname(file.originalname).toLowerCase();
+        if (allowedExtensions.includes(ext)) {
+            cb(null, true); // Accept the file
+        } else {
+            cb(
+                new Error(
+                    "Invalid file type. Only JPEG, PNG, and GIF are allowed.",
+                ),
+                false,
+            );
+        }
     },
 });

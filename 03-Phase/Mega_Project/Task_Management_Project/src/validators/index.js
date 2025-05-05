@@ -20,10 +20,10 @@ const userRegisterValidator = () => {
             .trim()
             .notEmpty()
             .isLength({ min: 8 })
-            .withMessage("password should be at least 3 character")
+            .withMessage("password should be at least 8 character")
             .isLength({ max: 16 })
             .withMessage("password cannot exceed 13 character"),
-        body("role").trim().notEmpty().withMessage("Role is Required"),
+        // body("role").trim().notEmpty().withMessage("Role is Required"),
     ];
 };
 
