@@ -57,3 +57,11 @@ http://judge0.com/
 
 
 https://github.com/marketplace/actions/deploy-to-hostinger
+
+
+// https://www.patterns.dev/
+// https://github.com/ryanmcdermott/clean-code-javascript
+// https://github.com/PacktPublishing/Node.js-Design-Patterns-Third-Edition
+// https://open-wc.org/guides/developing-components/code-examples/
+
+https://www.studytonight.com/dbms/
