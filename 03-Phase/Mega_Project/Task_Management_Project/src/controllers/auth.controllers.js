@@ -1,9 +1,10 @@
+import bcrypt from "bcryptjs";
 import { uploadOnImageKit } from "../middlewares/imagekit.middlewares.js";
 import { User } from "../models/user.models.js";
 import { ApiError } from "../utils/api-error.js";
 import { ApiResponse } from "../utils/api-response.js";
 import { asyncHandler } from "../utils/async-handler.js";
-import { emailVerificationMailgenContent, sendEmail } from "../utils/mail.js";
+import { emailVerificationMailgenContent, forgotPasswordMailgenContent, sendEmail } from "../utils/mail.js";
 import crypto from "crypto";
 
 const registerUser = asyncHandler(async (req, res) => {
@@ -71,15 +72,66 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 const loginUser = asyncHandler(async (req, res) => {
-    const { email, username, password, role } = req.body;
+    const { email, password } = req.body;
 
-    //validation
+    const user = await User.findOne({ email });
+    if (!user) {
+        throw new ApiError(404, "user not found");
+    }
+
+    if (!user.isEmailVerified) {
+        throw new ApiError(400, "Please verify Email before login");
+    }
+
+    const isPasswordCorrect = await bcrypt.compare(password, user.password);
+    if (!isPasswordCorrect) {
+        throw new ApiError(400, "Email or Password is wrong.");
+    }
+
+    const accessToken = user.generateAccessToken();
+    const refreshToken = user.generateRefreshToken();
+
+    const cookieOptions = {
+        httpOnly: true,
+        secure: true,
+        sameSite: "strict",
+    };
+
+    user.refreshToken = refreshToken;
+    user.save();
+
+    res.status(200)
+        .cookie("at", accessToken, cookieOptions)
+        .cookie("rt", refreshToken, cookieOptions)
+        .json(
+            new ApiResponse(
+                200,
+                {
+                    email,
+                    fullname: user.fullname,
+                    isEmailVerified: user.isEmailVerified,
+                },
+                "user Logged in successfully",
+            ),
+        );
 });
 
 const logoutUser = asyncHandler(async (req, res) => {
-    const { email, username, password, role } = req.body;
+    const { _id } = req.user;
 
-    //validation
+    const user = await User.findByIdAndUpdate(
+        { _id },
+        { refreshToken: undefined },
+        {new: true}
+    );
+    if (!user) {
+        throw new ApiError(401, "User Not authorized");
+    }
+
+    res.status(200)
+        .clearCookie("rt")
+        .clearCookie("at")
+        .json(new ApiResponse(200, null, "Logged out successfully"));
 });
 
 const verifyEmail = asyncHandler(async (req, res) => {
@@ -103,7 +155,7 @@ const verifyEmail = asyncHandler(async (req, res) => {
 
     user.isEmailVerified = true;
     user.emailVerificationToken = undefined;
-    user.emailVerificationExpiry = undefined
+    user.emailVerificationExpiry = undefined;
 
     await user.save();
 
@@ -118,10 +170,11 @@ const resendEmailVerification = asyncHandler(async (req, res) => {
 
     //validation
 });
-const resetForgottenPassword = asyncHandler(async (req, res) => {
-    const { email, username, password, role } = req.body;
 
-    //validation
+
+const resetForgottenPassword = asyncHandler(async (req, res) => {
+    const { newPassword, confirmNewPassword } = req.body
+    if()
 });
 
 const refreshAccessToken = asyncHandler(async (req, res) => {
@@ -131,9 +184,27 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
 });
 
 const forgotPasswordRequest = asyncHandler(async (req, res) => {
-    const { email, username, password, role } = req.body;
+    const { email } = req.body;
 
-    //validation
+    const user = await User.findOne({ email });
+    if (!user) {
+        throw new ApiError(404, "User not found");
+    }
+
+    const forgotPasswordToken = user.generateForgotPasswordToken();
+    const passwordResetUrl = `${process.env.BASE_URL}/api/v1/auth/reset-password/${user._id}/${forgotPasswordToken}`;
+
+    await user.save();
+    await sendEmail({
+        email,
+        subject: "Reset Password link",
+        mailgenContent: forgotPasswordMailgenContent(
+            user.fullname,
+            passwordResetUrl,
+        ),
+    });
+
+    return res.status(200).json(new ApiResponse(200, null, "Check Your Inbox"));
 });
 
 const changeCurrentPassword = asyncHandler(async (req, res) => {

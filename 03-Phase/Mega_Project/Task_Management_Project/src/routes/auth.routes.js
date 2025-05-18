@@ -1,10 +1,10 @@
-import { Router } from "express"
-import { registerUser, verifyEmail } from "../controllers/auth.controllers.js";
-import { validate } from "../middlewares/validator.middlewares.js"
+import { Router } from "express";
+import { forgotPasswordRequest, registerUser, verifyEmail } from "../controllers/auth.controllers.js";
+import { validate } from "../middlewares/validator.middlewares.js";
 import { userRegisterValidator } from "../validators/index.js";
 import { upload } from "../middlewares/multer.middlewares.js";
 
-const router = Router()
+const router = Router();
 
 router
     .route("/register")
@@ -17,11 +17,10 @@ router
 // userRegistrationValidator() force fully we executing this and it returns an array. jab /register me jaayenge tab yeh function immidiately run hojayega. for this is called factory pattern
 // userRegistrationValidator() isme se jo bhi error aaya ya nhi aaya oh sidha validate ko pass hogi automatically so we not written in this 'next()', validate errors ko 'req' k body se le lega
 
-router.get("/verify-email/:token", verifyEmail)
+router.route("/verify-email/:token").post(verifyEmail);
+router.route("/reset-password/:id/:token").post(forgotPasswordRequest);
 
-
-export default router
-
+export default router;
 
 /*
 

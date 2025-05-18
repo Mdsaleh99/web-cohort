@@ -65,3 +65,22 @@ https://github.com/marketplace/actions/deploy-to-hostinger
 // https://open-wc.org/guides/developing-components/code-examples/
 
 https://www.studytonight.com/dbms/
+https://neon.tech/postgresql/tutorial
+
+
+********************** IMPORTANT ********************************
+https://systemdesignschool.io/problems/leetcode/solution
+https://systemdesignschool.io/problems/webhook/solution
+https://systemdesignschool.io/problems/rate-limiter/solution
+https://systemdesignschool.io/problems/realtime-monitoring-system/solution
+https://systemdesignschool.io/problems/ticketmaster/solution
+
+https://colourcontrast.cc/
+
+
+https://thecopenhagenbook.com/
+https://github.com/karimould/awesome-js-tooling-in-rust
+
+Base64 encoding is a method that transforms binary data into an ASCII string format, which allows it to be transmitted over channels that primarily handle text. 
+
+https://www.overleaf.com/latex/templates/jakes-resume-anonymous/cstpnrbkhndn
