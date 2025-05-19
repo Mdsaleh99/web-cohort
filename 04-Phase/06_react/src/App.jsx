@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { ChaiMenu } from "./AllChai"
 
 export function App() {
     const [message, setMessage] = useState("Loading...")
@@ -15,6 +16,7 @@ export function App() {
             <h1>Welcome to chaicode</h1>
             <p>Serving hot chai with react</p>
             <h2>{message}</h2>
+            <ChaiMenu />
         </div>
     )
 }
