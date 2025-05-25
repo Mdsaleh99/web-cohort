@@ -1,5 +1,10 @@
 import { useState } from "react";
 
+// https://tanstack.com/router/latest
+// https://tanstack.com/query/latest
+// https://vite.dev/guide/build
+
+
 export function useContactForm() {
     const [loading, setLoading] = useState(false);
     const [successMessage, setSuccessMessage] = useState(null);
