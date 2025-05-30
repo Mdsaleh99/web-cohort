@@ -2,8 +2,10 @@
   "name": "10_ssg",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node scripts/build.js",
+    "serve": "npx serve dist"
   },
   "keywords": [],
   "author": "",
