@@ -1,0 +1,26 @@
+{
+  "name": "redis",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node dist/index",
+    "dev": "tsc-watch --onSuccess \"npm start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "tsc-watch": "^7.1.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.22",
+    "axios": "^1.9.0",
+    "express": "^4.21.2",
+    "ioredis": "^5.6.1",
+    "socket.io": "^4.8.1"
+  }
+}

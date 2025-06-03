@@ -1,0 +1,23 @@
+{
+  "name": "queue",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch api.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bullmq": "^5.53.2",
+    "express": "^4.21.2",
+    "ioredis": "^5.6.1",
+    "zod": "^3.25.49"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.22",
+    "@types/node": "^22.15.29"
+  }
+}

@@ -1,0 +1,31 @@
+🔁 1. Polling
+    What it is: The client (browser) keeps asking the server again and again: "Do you have any new data?
+    Example: Every 5 seconds, your app asks the server: “Anything new?”
+    Good for: Simpler real-time updates.
+    Downside: Lots of unnecessary requests even when there’s no new data (wastes resources).
+
+
+🏊‍♂️ 2. Pooling
+    Often confused with polling – but in most web contexts, “pooling” refers to connection or resource pooling, not messaging.
+    Meaning: Reusing a fixed number of resources (like database connections) instead of creating/destroying them repeatedly.
+    Example: You have 10 database connections shared by all users.
+
+
+🌐 3. WebSocket
+    What it is: A persistent, two-way connection between the client and server.
+    Example: Like a phone call – once connected, both sides can talk freely anytime.
+    Good for: Real-time apps like chat, games, live notifications.
+    Benefit: No need to keep asking the server — server can "push" data anytime.
+
+
+🔌 4. Socket.IO
+    What it is: A JavaScript library that helps manage real-time communication.
+    Built on top of WebSocket, but also falls back to polling if WebSocket isn’t supported.
+    Benefit: Works across all browsers with better reliability.
+    Example: Used in real-time chat apps, multiplayer games, collaborative tools.
+
+
+
+https://www.rabbitmq.com/tutorials/tutorial-two-javascript
+https://bullmq.io/
+https://github.com/Mdsaleh99/basic-server-check

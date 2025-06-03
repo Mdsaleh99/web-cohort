@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sockets</title>
+    </head>
+    <body>
+        <!-- <div>
+            <div>
+                <input
+                type="text"
+                placeholder="Type Your message"
+                id="message-input"
+                />
+                <button id="send-btn">Send</button>
+            </div>
+            <div class="messages">
+                <ul id="message-container">
+                    <li>hi</li>
+                </ul>
+            </div>
+            
+        </div> -->
+        <div id="checkbox-container"></div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            const checkboxes = new Array(100).fill(false);
+            console.log(checkboxes);
+
+            const checkboxContainer =
+                document.getElementById("checkbox-container");
+            console.log(checkboxContainer);
+
+            checkboxes.forEach((checkbox, i) => {
+                const input = document.createElement("input");
+                input.setAttribute("type", "checkbox");
+                input.id = `index_${i}`;
+                input.addEventListener("change", (e) => {
+                    // console.log(input.checked);
+                    socket.emit("checkbox-update", {
+                        index: i,
+                        value: input.checked,
+                    });
+                });
+                checkboxContainer.append(input);
+            });
+
+            const socket = io(); // connects to the backend over web socket
+            const messageContainer =
+                document.getElementById("message-container");
+
+            async function stateUpdate() {
+                const response = await fetch("/state", {
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
+                const _json = await response.json();
+                // console.log(_json);
+                if (_json.state) {
+                    _json.state.forEach((e, index) => {
+                        const el = document.getElementById(`index_${index}`)
+                        el.checked = e
+                    });
+                }
+            }
+
+            socket.on("checkbox-update", ({ index, value }) => {
+                // const e = document.getElementById(`index-${index}`)
+                // if(e){
+                //     e.checked = value
+                // }
+                stateUpdate();
+            });
+
+            socket.on("server-message", (msg) => {
+                const li = document.createElement("li");
+                li.innerText = msg;
+                messageContainer.appendChild(li);
+            });
+
+            // const messageInput = document.getElementById("message-input");
+            // const sendBtn = document.getElementById("send-btn");
+
+            // sendBtn.addEventListener("click", () => {
+            //     const msg = messageInput.value;
+            //     socket.emit("messages", msg);
+            // });
+
+            stateUpdate()
+        </script>
+    </body>
+</html>
