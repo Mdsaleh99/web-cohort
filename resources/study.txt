@@ -92,3 +92,11 @@ https://letsencrypt.org/
 https://www.youtube.com/watch?v=FziEhnIpln4
 https://www.youtube.com/watch?v=lFeYU31TnQ8
 https://www.youtube.com/watch?v=YuB3OuF3MUE
+
+
+
+https://kuzudb.com/
+https://turso.tech/
+https://liveblocks.io/
+https://platejs.org/
+https://www.udemy.com/course/react-native-the-practical-guide/?couponCode=KEEPLEARNING
