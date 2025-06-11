@@ -100,3 +100,14 @@ https://turso.tech/
 https://liveblocks.io/
 https://platejs.org/
 https://www.udemy.com/course/react-native-the-practical-guide/?couponCode=KEEPLEARNING
+
+
+https://redis.io/docs/latest/develop/interact/pubsub/
+https://matsu-theme.vercel.app/
+https://innate-noodle-e82.notion.site/AI-SaaS-app-Sommaire-Cheatsheet-188b184c73a880ada002db700139e4b1
+https://docs.uploadthing.com/
+https://ai-sdk.dev/docs/ai-sdk-rsc/streaming-react-components
+https://docs.google.com/document/d/1SEqrhK5tSy5mJsf5WzMvLXd-sXb0GT-dHwnpUb7WSiI/edit?addon_store&tab=t.0
+https://www.trickle.so/blog/how-to-create-a-stunning-ghibli-style-website-with-trickle-ai
+
+https://docs.bullmq.io/
