@@ -111,3 +111,10 @@ https://docs.google.com/document/d/1SEqrhK5tSy5mJsf5WzMvLXd-sXb0GT-dHwnpUb7WSiI/
 https://www.trickle.so/blog/how-to-create-a-stunning-ghibli-style-website-with-trickle-ai
 
 https://docs.bullmq.io/
+
+
+https://www.inngest.com/docs/guides/multi-step-functions
+https://www.inngest.com/docs/features/inngest-functions/steps-workflows
+https://agentkit.inngest.com/getting-started/quick-start
+
+https://regexr.com/
