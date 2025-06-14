@@ -118,3 +118,38 @@ https://www.inngest.com/docs/features/inngest-functions/steps-workflows
 https://agentkit.inngest.com/getting-started/quick-start
 
 https://regexr.com/
+
+http://axios-http.com/docs/intro
+https://ui.shadcn.com/docs/components
+https://www.heroui.com/
+https://libuv.org/
+https://highlightjs.org/
+
+
+
+https://github.com/The-Pocket/PocketFlow
+https://github.com/AsyncFuncAI/deepwiki-open
+
+https://tinywow.com/
+
+resources for website design inspiration
+
+- http://supahero.io → hero sections
+- http://bentogrids.com → bento grids
+- http://footer.design → footers
+- http://cta.gallery → cta sections
+- http://landing.love → landing pages
+- http://saaspo.com → saas websites
+- http://godly.website → website inspirations
+- http://dark.design → dark websites
+- http://navbar.gallery → navbar
+- http://60fps.design → motion
+
+
+
+https://docs.docker.com/compose/install/linux/
+https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+https://github.com/judge0/judge0/blob/master/CHANGELOG.md
+https://judge0.com/
+https://shiki.style/packages/monaco
+https://organic-citipati-da4.notion.site/1d7e8b262f268085bf3cf3bb22ed68f8
