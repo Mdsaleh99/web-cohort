@@ -153,3 +153,5 @@ https://github.com/judge0/judge0/blob/master/CHANGELOG.md
 https://judge0.com/
 https://shiki.style/packages/monaco
 https://organic-citipati-da4.notion.site/1d7e8b262f268085bf3cf3bb22ed68f8
+
+https://fal.ai/
