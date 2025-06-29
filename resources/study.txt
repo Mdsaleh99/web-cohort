@@ -166,3 +166,6 @@ https://appium.io/docs/en/latest/
 https://www.npmjs.com/package/browserslist
 
 **************************************************************************
+
+https://python.langchain.com/docs/integrations/document_loaders/microsoft_excel/
+https://js.langchain.com/docs/integrations/llms/openai/#installation
