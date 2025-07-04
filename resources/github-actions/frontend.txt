@@ -1,0 +1,52 @@
+name: Frontend Cloud Run Deployment
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "frontend/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "frontend/**"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: Google Cloud Auth
+        uses: "google-github-actions/auth@v2"
+        with:
+          credentials_json: "${{ secrets.GOOGLE_CREDENTIALS }}"
+          project_id: ${{ vars.GCP_PROJECT_ID }}
+
+      - name: Set up Cloud SDK
+        uses: "google-github-actions/setup-gcloud@v2"
+
+      - name: configure Docker
+        run: gcloud auth configure-docker us-central1-docker.pkg.dev
+
+      - name: Build
+        env:
+          IMAGE_NAME: frontend
+          PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
+          GCR_REPO_NAME: ${{ vars.GCR_REPO_NAME }}
+        run: |-
+          docker build --build-arg VITE_BACKEND_URL=${{ secrets.VITE_BACKEND_URL }} --build-arg VITE_CLERK_PUBLISHABLE_KEY=${{ secrets.VITE_CLERK_PUBLISHABLE_KEY }} -t us-central1-docker.pkg.dev/$PROJECT_ID/$GCR_REPO_NAME/$IMAGE_NAME:latest -f frontend/Dockerfile frontend/.
+          docker push us-central1-docker.pkg.dev/$PROJECT_ID/$GCR_REPO_NAME/$IMAGE_NAME:latest
+
+      - name: Deploy to cloud run
+        run: |
+          gcloud run deploy code-summit-fe \
+            --image us-central1-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.GCR_REPO_NAME }}/frontend:latest \
+            --platform managed \
+            --port=80 \
+            --region us-central1 \
+            --allow-unauthenticated \
+            --set-env-vars "VITE_BACKEND_URL=${{secrets.VITE_BACKEND_URL}},VITE_NODE_ENV=${{secrets.NODE_ENV}},VITE_CLERK_PUBLISHABLE_KEY=${{ secrets.VITE_CLERK_PUBLISHABLE_KEY }}"

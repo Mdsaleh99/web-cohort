@@ -1,0 +1,48 @@
+name: Backend Cloud run deployment
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "backend/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "backend/**"
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: Google cloud Auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: "${{ secrets.GOOGLE_CREDENTIALS }}"
+          project_id: ${{ vars.GCP_PROJECT_ID }}
+      - name: Setup Cloud SDK
+        uses: "google-github-actions/setup-gcloud@v2"
+
+      - name: configure Docker
+        run: gcloud auth configure-docker us-central1-docker.pkg.dev
+      - name: Build
+        env:
+          IMAGE_NAME: backend
+          PROJECT_ID: ${{vars.GCP_PROJECT_ID}}
+          REPO_NAME: ${{ vars.GCR_REPO_NAME }}
+        run: |-
+          docker build -t us-central1-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/$IMAGE_NAME:latest -f backend/Dockerfile backend/.
+          docker push us-central1-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/backend:latest
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy code-summit-backend \
+              --image us-central1-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.GCR_REPO_NAME }}/backend:latest \
+              --platform managed \
+              --port=8081 \
+              --region us-central1 \
+              --allow-unauthenticated \
+              --set-env-vars "BASEURL=${{secrets.BASE_URL}},DATABASE_URL=${{secrets.DATABASE_URL}},JWT_SECRET=${{secrets.JWT_SECRET}},JUDGE0_API_URL=${{secrets.JUDGE0_API_URL}},JUDGE0_AUTH=${{secrets.JUDGE0_AUTH}},CORS_ORIGIN=${{secrets.CORS_ORIGIN}},NODE_ENV=${{secrets.NODE_ENV}},CLERK_PUBLISHABLE_KEY=${{secrets.CLERK_PUBLISHABLE_KEY}},CLERK_SECRET_KEY=${{secrets.CLERK_SECRET_KEY}},RESEND_API_KEY=${{secrets.RESEND_API_KEY}},STRIPE_PUBLIC_KEY=${{secrets.STRIPE_PUBLIC_KEY}},STRIPE_SECRET_KEY=${{secrets.STRIPE_SECRET_KEY}}"
