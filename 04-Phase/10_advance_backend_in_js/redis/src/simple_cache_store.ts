@@ -27,7 +27,7 @@ app.get("/books", async (req, res) => {
 
 app.get("/books/total", async (req, res) => {
     // check cache
-    if (cacheStore.totalPageCount) {
+    if (cacheStore.totalPageCount) { // this approach is headache we have to do manually clear cache, LRU, server can be crash
         console.log("Cache Hit");
         return res.json({ totalPageCount: Number(cacheStore.totalPageCount) });
     }
