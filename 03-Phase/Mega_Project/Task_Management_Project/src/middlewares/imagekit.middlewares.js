@@ -11,12 +11,6 @@ const imagekit = new ImageKit({
     urlEndpoint: process.env.IMAGEKIT_URL_ENDPOINT,
 });
 
-// const imagekit = new ImageKit({
-//     publicKey: "public_9oXhUKaFxXTZpLk00pywvHy/OOM=",
-//     privateKey: "private_b17zA03IFGFSqy/I+5mqh9DrjG8=",
-//     urlEndpoint: "https://ik.imagekit.io/al9zl3lbh",
-// });
-
 const uploadOnImageKit = async (loacalFilePath) => {
     try {
         if (!loacalFilePath) return null;
