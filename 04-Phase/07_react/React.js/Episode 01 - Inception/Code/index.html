@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namaste React</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <h4>hey on the top of root</h4>
+    <div id="root">
+      <h1>Vasu is here</h1>
+      <!-- this will further replaced by parent element while rendering -->
+    </div>
+    <h4>hey on below the root</h4>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- these above 2 react js CDN, and when i write React and ReactDOM in browser console it show the all functions -->
+
+    <!-- <script>
+      const heading = React.createElement("h1", {}, "Hello from React")
+      const root = ReactDOM.createRoot(document.getElementById("root"))
+      console.log(heading)
+      root.render(heading)
+    </script> -->
+    <!-- createElement takes 3 arguments tag, option and different element or value which goes inside that tag which is also known as children and the object is where we give attributes for that element like id, type etc.   creating a element is the core thing of react and if i want to show this created element in browser we need root where all dom manipulation done, so we need ReactDOM to create root.    If i print the heading in console it should print object not html and render function takes the react object and create a html element and put on the browser.        the react only working inside div root so that it is replacing h1 tag which is in div root when other element render from react it should replace h1 tag with that render element.      React is a library and react can be apply for a small portion of a page-->
+    <script src="./App.js"></script>
+  </body>
+</html>

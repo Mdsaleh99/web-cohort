@@ -1,0 +1,104 @@
+Base64
+Base64 is an encoding scheme that converts binary data into text using only 64 safe characters (A-Z, a-z, 0-9, +, /).
+
+Why Base64?
+Text-safe: Converts binary data to text that can be safely transmitted over text-based protocols (HTTP, email, JSON)
+No special characters: Avoids issues with control characters that might break transmission
+Universal: Works across different systems and platforms
+
+Example:
+// Original text
+const text = "Hello World";
+
+// Encode to Base64
+const base64 = btoa(text); // "SGVsbG8gV29ybGQ="
+
+// Decode from Base64
+const decoded = atob(base64); // "Hello World"
+
+
+
+======================================================================================
+
+Buffer
+Buffer is a way to handle raw binary data in programming, especially in Node.js.
+
+What is it?
+Binary data container: Holds raw bytes of data
+Fixed-size: Once created, size cannot be changed
+Node.js specific: Mainly used in server-side JavaScript
+
+Example:
+// Create a buffer from a string
+const buffer = Buffer.from("Hello World", "utf8");
+console.log(buffer); // <Buffer 48 65 6c 6c 6f 20 57 6f 72 6c 64>
+
+// Convert buffer to Base64
+const base64 = buffer.toString('base64'); // "SGVsbG8gV29ybGQ="
+
+// Create buffer from Base64
+const fromBase64 = Buffer.from(base64, 'base64');
+console.log(fromBase64.toString()); // "Hello World"
+
+
+====================================================================================
+
+How They Work Together
+In your voice discussion app:
+
+// Backend (Node.js) - Converting audio to Base64
+const audioBuffer = fs.readFileSync('audio.mp3'); // Buffer
+const base64Audio = audioBuffer.toString('base64'); // Base64 string
+
+// Send to frontend
+res.json({ reply: base64Audio });
+
+// Frontend - Converting Base64 back to audio
+const handlePlayTTS = (base64Audio) => {
+    // Decode Base64 to binary
+    const binaryString = atob(base64Audio);
+    
+    // Create byte array
+    const byteArray = new Uint8Array(binaryString.length);
+    for (let i = 0; i < binaryString.length; i++) {
+        byteArray[i] = binaryString.charCodeAt(i);
+    }
+    
+    // Create audio blob
+    const audioBlob = new Blob([byteArray], { type: "audio/mpeg" });
+    const audioUrl = URL.createObjectURL(audioBlob);
+    
+    // Play audio
+    const audio = new Audio(audioUrl);
+    audio.play();
+};
+
+
+
+============================================================
+
+Uint8Array is a typed array in JavaScript that represents an array of 8-bit unsigned integers. It's part of the Web platform's TypedArray family, which allows you to handle binary data efficiently—especially useful for low-level operations like manipulating raw bytes (e.g., files, network streams, images, etc.).
+
+🔍 What does it mean?
+Uint8 = Unsigned Integer 8-bit
+→ Stores integers from 0 to 255.
+Array-like → You can access elements using indices (arr[0], arr[1]).
+Backed by a binary buffer (ArrayBuffer).
+
+📦 Use Cases
+Reading and manipulating binary files (e.g., images, audio)
+Handling raw byte streams (e.g., WebSockets, crypto libraries)
+Working with Blob, File, Buffer, or ArrayBuffer
+
+🧪 Example:
+const bytes = new Uint8Array([72, 101, 108, 108, 111]);
+console.log(bytes); // Uint8Array(5) [72, 101, 108, 108, 111]
+
+const text = new TextDecoder().decode(bytes);
+console.log(text); // "Hello"
+
+
+⚠️ Key Things to Remember
+Max value is 255, min is 0.
+Unlike normal JS arrays, it's fixed in length.
+It’s ideal for performance-sensitive and binary operations.

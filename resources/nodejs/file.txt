@@ -1,0 +1,8 @@
+params (Route Parameters)
+    Used to capture dynamic values from the URL path.
+    Defined in the route using : (colon).
+    Accessed via req.params.
+
+query (Query Parameters)
+    Used to pass key-value pairs in the URL after the ?.
+    Accessed via req.query.

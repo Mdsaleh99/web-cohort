@@ -1,0 +1,92 @@
+{
+  "id": "23678",
+  "name": "McDonald's",
+  "cloudinaryImageId": "ee5f8e06b300efc07c9fe3f4df40dfc4",
+  "locality": "5th Block",
+  "areaName": "Koramangala",
+  "costForTwo": "₹400 for two",
+  "cuisines": ["Burgers", "Beverages", "Cafe", "Desserts"],
+  "avgRating": 4.3,
+  "feeDetails": {
+    "restaurantId": "23678",
+    "fees": [
+      {
+        "name": "BASE_DISTANCE",
+        "fee": 2500
+      },
+      {
+        "name": "BASE_TIME"
+      },
+      {
+        "name": "ANCILLARY_SURGE_FEE"
+      }
+    ],
+    "totalFee": 2500
+  },
+  "parentId": "630",
+  "avgRatingString": "4.3",
+  "totalRatingsString": "10K+",
+  "sla": {
+    "deliveryTime": 16,
+    "lastMileTravel": 1.3,
+    "serviceability": "SERVICEABLE",
+    "slaString": "16 mins",
+    "lastMileTravelString": "1.3 km",
+    "iconType": "ICON_TYPE_EMPTY"
+  },
+  "availability": {
+    "nextCloseTime": "2023-08-03 03:30:00",
+    "opened": true
+  },
+  "badges": {
+    "textExtendedBadges": [
+      {
+        "iconId": "guiltfree/GF_Logo_android_3x",
+        "shortDescription": "options available",
+        "fontColor": "#7E808C"
+      }
+    ]
+  },
+  "isOpen": true,
+  "type": "F",
+  "badgesV2": {
+    "entityBadges": {
+      "imageBased": {},
+      "textBased": {},
+      "textExtendedBadges": {
+        "badgeObject": [
+          {
+            "attributes": {
+              "description": "",
+              "fontColor": "#7E808C",
+              "iconId": "guiltfree/GF_Logo_android_3x",
+              "shortDescription": "options available"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "aggregatedDiscountInfoV3": {
+    "header": "10% OFF",
+    "subHeader": "ABOVE ₹999",
+    "discountTag": "FLAT DEAL"
+  },
+  "orderabilityCommunication": {
+    "title": {},
+    "subTitle": {},
+    "message": {},
+    "customIcon": {}
+  },
+  "differentiatedUi": {
+    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+    "differentiatedUiMediaDetails": {
+      "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+      "lottie": {},
+      "video": {}
+    }
+  },
+  "reviewsSummary": {},
+  "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+  "restaurantOfferPresentationInfo": {}
+}

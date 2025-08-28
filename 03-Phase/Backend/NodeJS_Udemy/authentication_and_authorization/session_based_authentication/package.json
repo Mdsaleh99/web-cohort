@@ -1,0 +1,25 @@
+{
+    "name": "session_based_authentication",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "dev": "node --watch index.js",
+        "db:push": "drizzle-kit push",
+        "db:studio": "drizzle-kit studio"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "dotenv": "^17.2.1",
+        "drizzle-orm": "^0.44.4",
+        "express": "^5.1.0",
+        "pg": "^8.16.3"
+    },
+    "devDependencies": {
+        "@types/pg": "^8.15.5",
+        "drizzle-kit": "^0.31.4",
+        "tsx": "^4.20.4"
+    }
+}
