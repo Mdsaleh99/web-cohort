@@ -38,7 +38,8 @@ class UserClass extends React.Component {
   componentWillUnmount() {
     console.log('Component Will Unmount');
   }
-
+  
+  // react render with dummy data initally and update the dom after that componentDidMount was called and setState was called
   render() {
     // const { name, location } = this.props;
     // const { count } = this.state;
@@ -83,9 +84,9 @@ export default UserClass;
  *
  *
  * ----- Mounting CYCLE -----
- *   Constructor (dummy)
- *   Render (dummy)
- *       <HTML Dummy></HTML>
+ *   Constructor (dummy data)
+ *   Render (dummy data)
+ *       <HTML Dummy></HTML> // render component with dummy data
  *   Component Did Mount
  *       <API Call>
  *       <this.setState> - State variable is updated

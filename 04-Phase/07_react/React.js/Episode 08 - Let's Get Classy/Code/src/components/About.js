@@ -25,9 +25,9 @@ class About extends Component {
     );
   }
 }
-
+// updating the DOM is expensive task
 // * RENDER CYCLE OF CLASS BASED COMPONENTS WHEN THE CLASS HAS TWO CHLIDREN
-
+// https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 /* 
 *  - Parent Constructor()              -- Render Phase
 *  - Parent Render()
@@ -39,10 +39,11 @@ class About extends Component {
 *    - Second Child Render()
 
 *     <DOM UPDATED - IN SINGLE BATCH> -> Optimizes the Performance of App  -- Commit Phase
-*    - First Child ComponentDidMount()
+*    
+      - First Child ComponentDidMount()
 *    - Second Child ComponentDidMount()
 
-*  - Parent ComponentDidMount()=
+*  - Parent ComponentDidMount()
 */
 
 // const About = () => {
