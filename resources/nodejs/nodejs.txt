@@ -1,0 +1,21 @@
+Global Objects in Node.js
+In the browser, the global object is window.
+
+In Node.js, the global object is called global.
+Example:
+console.log(global);
+This will show methods like setTimeout, setInterval, and more.
+
+Important note:
+console.log(this); // {}
+At the top level in Node.js, this does not refer to the global object.
+
+
+
+What is globalThis?
+To solve these differences across environments, ECMAScript 2020 introduced globalThis.
+
+    In browsers, globalThis refers to window.
+    In Node.js, globalThis refers to global.
+
+This gives us one consistent way to access the global object, no matter where our JavaScript code is running.

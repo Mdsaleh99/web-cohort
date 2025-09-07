@@ -1,0 +1,20 @@
+PUT (Replace Entire Resource):
+    The PUT method is used to replace the entire resource at the specified URI with the data provided in the request body.
+    If a field is omitted from the PUT request, it is assumed to be removed from the resource on the server.
+    PUT is idempotent, meaning that making the same PUT request multiple times will have the same effect as making it once. It guarantees that the resource will be in the state specified by the request body after the operation, regardless of how many times it's sent.
+
+
+PATCH (Apply Partial Update):
+    The PATCH method is used to apply partial modifications to a resource. Only the fields specified in the request body are updated, while other fields of the resource remain unchanged.
+    If a field is omitted from the PATCH request, it means that field should not be altered.
+    PATCH is typically non-idempotent by default, as repeating the same PATCH request could lead to different results depending on the server-side implementation and the nature of the patch (e.g., incrementing a counter). However, carefully designed PATCH operations can be idempotent.
+
+
+In summary:
+PUT: is for full replacement of a resource.
+PATCH: is for partial updates to specific fields of a resource.
+
+
+When to use which:
+Use PUT when you need to completely replace a resource or if you are sending the complete, updated representation of a resource.
+Use PATCH when you only need to modify a few specific fields of a resource, making it more efficient in terms of network bandwidth, especially for large resources.
