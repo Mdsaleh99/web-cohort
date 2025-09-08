@@ -11,3 +11,6 @@
 - Modular Bundling
 - Code Splitting
 - Lazy Loading
+
+- [React Custom Hooks](https://reactjs.org/docs/hooks-custom.html)
+- [React lazy](https://react.dev/reference/react/lazy#suspense-for-code-splitting)
