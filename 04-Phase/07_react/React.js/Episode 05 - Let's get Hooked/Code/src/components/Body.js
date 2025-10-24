@@ -14,6 +14,11 @@ const Body = () => {
     // in react 16 new algorithm came out to update the dom which is react fiber
     // diff algorithm
 
+     // * if no dependency array => useEffect is called on every component render of the component
+    // * if the dependency array is empty => useEffect is called only on the initial render(just once) of the component
+    // * if the dependency array contains a dependency => useEffect is called everytime the value of the depencecy changes
+    // * Dependency: A depency can be a state variable (or) a function
+
     // * State variable - Super Powerful variable
     const [listOfRestaurants, setListOfRestaurants] = useState(resList);
 
