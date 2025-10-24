@@ -1,4 +1,5 @@
 # Understanding this keyword in js
+The this keyword in JavaScript refers to the context in which a function is executed. Its value is determined at runtime, based on how the function is called, rather than where it is defined.
 
 Whenever `this` is used, it refers to the context (`संदर्भ` ) in which a piece of code is executed.
 

@@ -1,7 +1,81 @@
-"use strict";
+// "use strict";
 
 console.log(window); // window is a global object for browser
 console.log(this); // 'this' keyword always refer to global object. for browser global object is window so 'this' keyword points to window
+
+// Situation 1:
+console.log(this);
+
+// Situation 2: 'this' inside a function
+function func() {
+  console.log("hi, this is func2", this);
+}
+func(); // Here, 'this' refers to the global object (window in browsers)
+
+// Situation 3: 'this' inside a method of an object
+const obj = {
+  name: "Mohammed",
+  greet: function () {
+    console.log(this);
+  },
+};
+obj.greet(); // Here, 'this' refers to 'obj'
+
+// Situation 4: Constructor function
+function Person(name, age) {
+  console.log(this);
+  this.name = name;
+  this.age = age;
+}
+
+const person1 = new Person("Alice", 30); // 'this' refers to the newly created object
+
+
+// Situation 5: 
+const user1 = {
+  name: "Saleh",
+  greet: function () {
+    console.log(this);
+  },
+}
+
+const greet = user1.greet; // function reference assignment
+greet(); // 'this' is undefined in strict mode, or global object in non-strict mode because it's called as a regular function.
+
+// Situation 6:
+const obje = {
+  name: "Asim",
+  printName: function () {
+    console.log("upper: ", this); // 'this' refers to 'obje'
+
+    const printAgain = function () {
+      console.log("inner: ", this); // 'this' is undefined in strict mode, or global object in non-strict mode
+    }
+
+    printAgain();
+  }
+}
+
+obje.printName();
+
+
+// Situation 7:
+const objeArrow = {
+  name: "Asim",
+  printName: function () {
+    console.log("upper: ", this); // 'this' refers to 'obje'
+
+    const printAgain = () => {
+      console.log("inner: ", this); // 'this' refers to 'obje' because arrow functions inherit 'this' from their enclosing context (outer enviornment) meaning the parent function
+    }
+
+    printAgain();
+  }
+}
+
+obje.printName();
+
+// ----------------------------------------------------------------------------------------
 
 function func() {
   console.log("hi, this is func", this);
