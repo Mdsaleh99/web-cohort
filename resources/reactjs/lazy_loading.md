@@ -1,7 +1,3 @@
-Great question 👌 Let’s go **deep into `React.lazy` and `React.Suspense`**.
-
----
-
 # 📖 React `lazy` and `Suspense` — Deep Explanation
 
 ## 1. What is `React.lazy`?

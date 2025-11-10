@@ -152,7 +152,8 @@ export default async function ServerPage() {
 ### 🧩 Example 2: Non-Fetch SSR (Dynamic Computation)
 ```tsx
 // app/server-random/page.tsx
-export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic' // declaration in Next.js is used to explicitly force a page or layout to be rendered dynamically on every request.
+// Without 'force-dynamic', Next.js might statically generate the page at build time and serve a cached, outdated information to subsequent visitors.
 
 export default async function RandomNumberPage() {
   const randomNumber = Math.floor(Math.random() * 1000)
