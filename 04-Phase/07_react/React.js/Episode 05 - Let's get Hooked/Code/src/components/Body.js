@@ -7,20 +7,26 @@ const Body = () => {
     // * useState() - Super Powerful variable
     // * useEffect() -
 
-    // useState - whenever the state variable updates, react re-renders the whole component and the state variable will be new for updated value
+    // normal js variable - cannot update the variable value and cannot re-render the component
+    // state variable - can update the variable value and can re-render the component
+
+    // useState - Whenever a state variable updates, React re-renders the whole component, and then updates only the parts of the DOM (using the react reconciliation algorithm) that actually changed. The state variable will have the new updated value in that re-render
     // e.g: listOfRestaurants has inital value before updting state variable, when state variable update with different value it re-renders whole component and state variable has new (updated) value
     // react most popular or why large application super fast - because react make DOM manipulation or operation super fast, it keep sync the data layer with ui layer
     // react uses reconciliation algorithm which also known as react fiber
     // in react 16 new algorithm came out to update the dom which is react fiber
     // diff algorithm
 
-     // * if no dependency array => useEffect is called on every component render of the component
+    // * if no dependency array => useEffect is called on every component render of the component
     // * if the dependency array is empty => useEffect is called only on the initial render(just once) of the component
     // * if the dependency array contains a dependency => useEffect is called everytime the value of the depencecy changes
     // * Dependency: A depency can be a state variable (or) a function
 
     // * State variable - Super Powerful variable
     const [listOfRestaurants, setListOfRestaurants] = useState(resList);
+    // const arr = useState();
+    // const stateVariable = arr[0]; // current value of the state variable
+    // const setStateVariable = arr[1]; // function to update the state variable
 
     // * Normal JS variable
     // const listOfRestaurants = [
