@@ -6,7 +6,7 @@ Let me explain these fundamental web rendering concepts from basic to advanced, 
 
 ### Basic Concept
 The browser receives a minimal HTML shell and JavaScript does all the rendering on the client side.
-Client components are pre-rendered on the server side to create a static shell and hydrated on the client side. This means everything in the client component doesn't required the interactivity or isn't dependent on browser is still rendered on the server. The code or parts rely on the browser or require interactivity are left as placeholders during serverside pre-rendering. When they reach the client, the browser then renders the client components and fills in the placeholders left by the server
+Client components are pre-rendered on the server side to create a static shell and hydrated on the client side. This means everything in the client component doesn't required the interactivity or isn't dependent on browser is still rendered on the server. The code or parts rely on the browser or require interactivity are left as placeholders during serverside pre-rendering. When they reach the client, the browser then renders the client components and fills in the placeholders left by the server.
 
 **Flow:**
 1. Server sends basic HTML + JavaScript bundle
