@@ -1,4 +1,4 @@
-# 🚀 Web Cohort – All Codes & Challenges  
+# 🚀 Web Cohort 2025 – All Codes & Challenges  
 
 Welcome to the **Web Cohort Repository**! 👨‍💻 Here, you'll find all the **codes, challenges, and concepts** covered in the cohort. Each code snippet is well-commented for better understanding. I **regularly update** this repository with new topics as they are taught.  
 
