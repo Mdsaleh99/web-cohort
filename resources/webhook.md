@@ -1,7 +1,3 @@
-Cool, let's get into this properly. Webhooks are one of those things people hear all the time but rarely understand deeply. After you read this, you’ll fully get what is happening under the hood.
-
----
-
 Think of a webhook like **a doorbell for your application**.
 
 Normally, when you want data from another server (like Paytm, Razorpay, GitHub, Shopify etc.), your app sends a request and asks:
